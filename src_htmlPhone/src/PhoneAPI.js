@@ -95,7 +95,6 @@ class PhoneAPI {
     store.dispatch('resetPhone')
     store.dispatch('resetMessage')
     store.dispatch('resetContact')
-    store.dispatch('resetBourse')
     store.dispatch('resetAppels')
     return this.post('deleteALL')
   }
@@ -129,6 +128,22 @@ class PhoneAPI {
     this.post('tchat_addMessage', { channel, message })
   }
 
+  // === App Twitter
+  async twitterGetMessage () {
+    this.post('twitter_getMessages')
+  }
+  async twitterSendMessage (message) {
+    this.post('twitter_addMessage', { message })
+  }
+
+  // === App Inventory
+  async dropItem (data) {
+    return this.post('dropItem', data)
+  }
+  async useItem (name) {
+    return this.post('useItem', name)
+  }
+
   // ==========================================================================
   //  Gestion des events
   // ==========================================================================
@@ -144,14 +159,14 @@ class PhoneAPI {
   onupdateContacts (data) {
     store.commit('SET_CONTACTS', data.contacts)
   }
+  onupdateInventory (data) {
+    store.commit('SET_INVENTORY', data.inventory)
+  }
   onhistoriqueCall (data) {
     store.commit('SET_APPELS_HISTORIQUE', data.historique)
   }
   onupdateBankbalance (data) {
     store.commit('SET_BANK_AMONT', data.banking)
-  }
-  onupdateBourse (data) {
-    store.commit('SET_BOURSE_INFO', data.bourse)
   }
   // Call
   async startCall (numero, extraData = undefined) {
@@ -210,6 +225,19 @@ class PhoneAPI {
   }
   ontchat_channel (data) {
     store.commit('TCHAT_SET_MESSAGES', data)
+  }
+
+  // Twitter Event
+  ontwitter_receive (data) {
+    store.dispatch('twitterAddMessage', data)
+  }
+
+  ontwitter_messages (data) {
+    store.commit('TWITTER_SET_MESSAGES', data)
+  }
+
+  ontwitter_delete (data) {
+    store.dispatch('twitterDeleteMsg', data)
   }
 
   // =====================

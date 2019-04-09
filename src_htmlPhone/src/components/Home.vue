@@ -18,14 +18,6 @@
           {{but.intlName}}
           <span class="puce" v-if="but.puce !== undefined && but.puce !== 0">{{but.puce}}</span>
       </button>
-      <div class="btn_menu_ctn">
-        <button 
-          class="btn_menu"
-            :class="{ select: AppsHome.length === currentSelect}"
-            v-bind:style="{backgroundImage: 'url(' + '/html/static/img/icons_app/menu.png' +')'}"
-          >
-        </button>
-      </div>
     </div> 
   </div>
 </template>
@@ -49,24 +41,22 @@ export default {
   methods: {
     ...mapActions(['closePhone', 'setMessages']),
     onLeft () {
-      this.currentSelect = (this.currentSelect + this.AppsHome.length) % (this.AppsHome.length + 1)
+      this.currentSelect = (this.currentSelect + this.AppsHome.length - 1) % (this.AppsHome.length)
     },
     onRight () {
-      this.currentSelect = (this.currentSelect + 1) % (this.AppsHome.length + 1)
+      this.currentSelect = (this.currentSelect + 1) % (this.AppsHome.length)
     },
     onUp () {
       this.currentSelect = Math.max(this.currentSelect - 4, 0)
+      // console.log(this.currentSelect - 4)
     },
     onDown () {
-      this.currentSelect = Math.min(this.currentSelect + 4, this.AppsHome.length)
+      this.currentSelect = Math.min(this.currentSelect + 4, this.AppsHome.length - 1)
+      console.log(this.currentSelect + 4)
     },
     onEnter () {
-      if (this.currentSelect === this.AppsHome.length) {
-        this.$router.push({ name: 'menu' })
-      } else {
-        const name = this.AppsHome[this.currentSelect].routeName
-        this.$router.push({ name })
-      }
+      const name = this.AppsHome[this.currentSelect].routeName
+      this.$router.push({ name })
     },
     onBack () {
       this.closePhone()
@@ -145,7 +135,7 @@ export default {
   display: flex;
   padding: 0 16px; 
   width: 100%;
-  bottom:1px;
+  top:35px;
   position: absolute;
   align-items: flex-end;
   flex-flow: row;
@@ -193,17 +183,6 @@ button .puce{
 button.select{
   background-color: rgba(255,255,255, 0.7);
   border-radius: 12px;
-}
-
-.btn_menu_ctn{
-  width: 100%;
-  display: flex;
-  height: 80px;
-  justify-content: center;
-  align-content: center;
-}
-.btn_menu {
-  height: 50px;
 }
 
 </style>

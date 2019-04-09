@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/components/Home'
-import Menu from '@/components/Menu'
 
 import Contacts from '@/components/contacts/Contacts'
 import Contact from '@/components/contacts/Contact'
@@ -21,10 +20,13 @@ import TchatMessage from '@/components/Tchat/TchatMessage'
 
 import Parametre from '@/components/parametre/Parametre'
 import Bank from '@/components/Bank/Bank'
-import Bourse from '@/components/Bourse/Bourse'
 import Photo from '@/components/Photo/Photo'
 
 import App9GAG from '@/components/App9GAG'
+
+import Inventory from '@/components/Inventory/Inventory'
+import Item from '@/components/Inventory/Item'
+import Twitter from '@/components/Twitter/Twitter'
 
 Vue.use(Router)
 
@@ -34,11 +36,6 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
-    },
-    {
-      path: '/menu',
-      name: 'menu',
-      component: Menu
     },
     {
       path: '/contacts',
@@ -64,10 +61,6 @@ export default new Router({
       path: '/messages/:number/:display',
       name: 'messages.view',
       component: Messages
-    }, {
-      path: '/bourse',
-      name: 'bourse',
-      component: Bourse
     }, {
       path: '/bank',
       name: 'bank',
@@ -108,6 +101,18 @@ export default new Router({
       path: '/9gag',
       name: '9gag',
       component: App9GAG
+    }, {
+      path: '/inventory',
+      name: 'inventory',
+      component: Inventory
+    }, {
+      path: '/item/:name',
+      name: 'inventory.view',
+      component: Item
+    }, {
+      path: '/twitter',
+      name: 'twitter',
+      component: Twitter
     }, {
       path: '*',
       redirect: '/'

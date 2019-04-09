@@ -232,9 +232,10 @@ AddEventHandler("gcPhone:allMessage", function(allmessages)
   messages = allmessages
 end)
 
-RegisterNetEvent("gcPhone:getBourse")
-AddEventHandler("gcPhone:getBourse", function(bourse)
-  SendNUIMessage({event = 'updateBourse', bourse = bourse})
+RegisterNetEvent("gcPhone:inventoryItems")
+AddEventHandler("gcPhone:inventoryItems", function(_inventory)
+  SendNUIMessage({event = 'updateInventory', inventory = _inventory})
+  inventory = _inventory
 end)
 
 RegisterNetEvent("gcPhone:receiveMessage")
@@ -577,6 +578,19 @@ RegisterNUICallback('setReadMessageNumber', function (data, cb)
   setReadMessageNumber(data.number)
   cb()
 end)
+--====================================================================================
+--  Inventory
+--====================================================================================
+RegisterNUICallback('dropItem', function(data) 
+  TriggerServerEvent("esx:removeInventoryItem", 'item_standard', data.name, data.amount)
+end)
+
+RegisterNUICallback('useItem', function(name) 
+  TriggerServerEvent("esx:useItem", name)
+
+  TriggerServerEvent("gcPhone:useItem")
+end)
+
 --====================================================================================
 --  Event - Contacts
 --====================================================================================

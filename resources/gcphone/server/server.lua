@@ -108,6 +108,93 @@ function getOrGeneratePhoneNumber (sourcePlayer, identifier, cb)
         cb(myPhoneNumber)
     end
 end
+
+--====================================================================================
+--  Inventory
+--====================================================================================
+function initInventory(identifier)
+    local xPlayer = ESX.GetPlayerFromIdentifier(identifier)
+
+    if xPlayer == nil then
+        Wait(50)
+
+        initInventory(identifier)
+        return
+    end
+
+    local result = xPlayer.getInventory()
+
+    if result == nil or #result == 0 then
+        Wait(50)
+
+        initInventory(identifier)
+        return
+    end
+
+    if result == nil then
+        return {}
+    end
+
+    for k, v in pairs(result) do
+        v.display = v.label.. " x ".. v.count
+        v.label = nil
+        v.limit = nil
+
+        v.identifier = identifier
+    end
+
+    for k, v in pairs(result) do
+        if v.count == 0 then
+            table.remove(result, k)
+        end
+    end
+
+    TriggerClientEvent("gcPhone:inventoryItems", tonumber(xPlayer.source), result)
+end
+
+
+function getInventory(identifier)
+    local xPlayer = ESX.GetPlayerFromIdentifier(identifier)
+    local result = xPlayer.getInventory()
+
+    for k, v in pairs(result) do
+        v.display = v.label.. " x ".. v.count
+        v.label = nil
+        v.limit = nil
+
+        v.identifier = identifier
+    end
+
+    return result
+end
+
+AddEventHandler('esx:onAddInventoryItem', function(source, item, count)
+    local sourcePlayer = tonumber(source)
+    local identifier = getPlayerID(source)
+
+    -- Improve
+    -- This currently updates the whole inventory and should only remove/add items
+    TriggerClientEvent("gcPhone:inventoryItems", sourcePlayer, getInventory(identifier))
+end)
+
+
+AddEventHandler('esx:onRemoveInventoryItem', function(source, item, count)
+    local sourcePlayer = tonumber(source)
+    local identifier = getPlayerID(source)
+
+    -- Improve
+    -- This currently updates the whole inventory and should only remove/add items
+    TriggerClientEvent("gcPhone:inventoryItems", sourcePlayer, getInventory(identifier))
+end)
+
+RegisterServerEvent('gcPhone:useItem')
+AddEventHandler('gcPhone:useItem', function()
+    local sourcePlayer = tonumber(source)
+    local identifier = getPlayerID(source)
+
+    TriggerClientEvent("gcPhone:inventoryItems", sourcePlayer, getInventory(identifier))
+end)
+
 --====================================================================================
 --  Contacts
 --====================================================================================
@@ -570,6 +657,7 @@ AddEventHandler('es:playerLoaded',function(source)
         TriggerClientEvent("gcPhone:myPhoneNumber", sourcePlayer, myPhoneNumber)
         TriggerClientEvent("gcPhone:contactList", sourcePlayer, getContacts(identifier))
         TriggerClientEvent("gcPhone:allMessage", sourcePlayer, getMessages(identifier))
+        initInventory(identifier)
     end)
 end)
 
@@ -584,6 +672,7 @@ AddEventHandler('gcPhone:allUpdate', function()
     TriggerClientEvent("gcPhone:allMessage", sourcePlayer, getMessages(identifier))
     TriggerClientEvent('gcPhone:getBourse', sourcePlayer, getBourse())
     sendHistoriqueCall(sourcePlayer, num)
+    initInventory(identifier)
 end)
 
 

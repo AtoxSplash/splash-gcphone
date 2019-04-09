@@ -1,6 +1,5 @@
 <template>
   <div class='phone_infoBare barre-header'>
-    <span class='reseau'>{{config.reseau}}</span>
     <span class="time">
       <current-time></current-time>
     </span>
@@ -40,39 +39,39 @@ export default {
 .barre1 {
     height: 12px;
     width: 3px;
-    right: 93px;
+    right: 48px;
     background-color: rgba(255, 255, 255, 0.6);
     color: rgba(255, 255, 255, 0.6);
     border: none;
-    bottom: -1px;
+    bottom: -3px;
 }
 .barre2 {
     height: 9px;
     width: 3px;
-    right: 98px;
+    right: 53px;
     background-color: white;
     border: none;
-    bottom: -1px;
+    bottom: -3px;
 }
 .barre3 {
     height: 6px;
     width: 3px;
-    right: 103px;
+    right: 58px;
     background-color: white;
     border: none;
-    bottom: -1px;
+    bottom: -3px;
 }
 .barre4 {
     height: 3px;
     width: 3px;
-    right: 108px;
+    right: 63px;
     background-color: white;
     border: none;
-    bottom: -1px;
+    bottom: -3px;
 }
 .time{
-    text-align: right;
-    float: right;
+    text-align: left;
+    float: left;
     padding-right: 12px;
 }
 
@@ -80,18 +79,18 @@ export default {
 .batterie1 {
     height: 10px;
     width: 7px;
-    right: 78px;
+    right: 35px;
     background-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
     border-radius: 0.5px;
     border: none;
-    bottom: -1px;
+    bottom: -3px;
 }
 .batterie2 {
     height: 13px;
     width: 5px;
-    right: 79px;
-    bottom: 0px;
+    right: 36px;
+    bottom: -2px;
     background-color: rgba(255, 255, 255, 0.6);
     border: 0.5px solid white;
     border-radius: 1px;

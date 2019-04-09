@@ -84,4 +84,7 @@ export default {
 </script>
 
 <style lang="scss">
+  body {
+    z-index: 99999;
+  }
 </style>

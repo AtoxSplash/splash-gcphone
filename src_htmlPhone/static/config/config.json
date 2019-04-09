@@ -1,5 +1,4 @@
 {
-  "reseau": "Gannon",
   "warningMessageCount": 250,
   "themeColor": "#303f9f",
   "colors": [
@@ -49,7 +48,7 @@
   "coque": {
     "Sansumg S8": "s8.png",
     "Iphone X": "iphonex.png",
-    "Brick Base": "base.png",
+    "Oneplus 5T": "oneplus5t.png",
     "Transparent": "transparent.png"
   },
   "coque_default": {
@@ -64,14 +63,14 @@
       "icon": "/html/static/img/icons_app/bank.png",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "police"
           }
         },
         {
-          "title": "Appeler le standard",
+          "title": "Auto call",
           "eventName": "gcphone:autoCallNumber",
           "type": {
             "number": "911"
@@ -84,7 +83,7 @@
       "backgroundColor": "red",
       "subMenu": [
         {
-          "title": "Envoyer un message",
+          "title": "Send a message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
             "number": "ambulance"
@@ -124,7 +123,7 @@
     {
       "name": "Paramètres",
       "fr_FR__name": "Paramètres",
-      "en_US__name": "System",
+      "en_US__name": "Settings",
       "icons": "/html/static/img/icons_app/settings.png",
       "routeName": "parametre",
       "inHomePage": true
@@ -135,32 +134,39 @@
       "en_US__name": "Bank",
       "icons": "/html/static/img/icons_app/bank.png",
       "routeName": "bank",
-      "inHomePage": false
-    },
-    {
-      "name": "Bourse",
-      "fr_FR__name": "Bourse",
-      "en_US__name": "Stock Market",
-      "icons": "/html/static/img/icons_app/bourse.png",
-      "routeName": "bourse",
-      "enabled": true
+      "inHomePage": true
     },
     {
       "name": "Photo",
       "fr_FR__name": "Photo",
       "en_US__name": "Camera",
       "icons": "/html/static/img/icons_app/photo.png",
-      "routeName": "photo"
+      "routeName": "photo",
+      "inHomePage": true
     },
     {
-      "name": "Dark Chat",
+      "name": "Tor Chat",
       "icons": "/html/static/img/icons_app/tchat.png",
-      "routeName": "tchat"
+      "routeName": "tchat",
+      "inHomePage": true
     },
     {
       "name": "9GAG",
       "icons": "/html/static/img/icons_app/9gag.png",
-      "routeName": "9gag"
+      "routeName": "9gag",
+      "inHomePage": true
+    },
+    {
+      "name": "Inventory",
+      "icons": "/html/static/img/icons_app/inventory.png",
+      "routeName": "inventory",
+      "inHomePage": true
+    },
+    {
+      "name": "Twitter",
+      "icons": "/html/static/img/icons_app/twitter.png",
+      "routeName": "twitter",
+      "inHomePage": true
     }
   ],
   "language": {
@@ -194,8 +200,6 @@
 
       "APP_BANK_TITLE": "Banque",
 
-      "APP_BOURSE_TITLE": "Bourse",
-
       "APP_CONTACT_TITLE": "Contact",
       "APP_CONTACT_NEW": "Nouveau Contact",
       "APP_CONTACT_EDIT": "Modifier le contact",
@@ -218,7 +222,7 @@
       "APP_MESSAGE_CONTRACT_ENTER_NUMBER": "Enter un numero",
       "APP_MESSAGE_PLACEHOLDER_ENTER_MESSAGE": "Envoyer un message",
       
-      "APP_DARKTCHAT_TITLE": "Dark Tchat",
+      "APP_DARKTCHAT_TITLE": "Tor Chat",
       "APP_DARKTCHAT_NEW_CHANNEL": "Ajouter un channel",
       "APP_DARKTCHAT_DELETE_CHANNEL": "Effacer le channel",
       "APP_DARKTCHAT_CANCEL": "Annuler",
@@ -245,14 +249,14 @@
       "CONFIRM": "Confirm",
       "CANCEL": "Cancel",
 
-      "APP_CONFIG_TITLE": "System",
+      "APP_CONFIG_TITLE": "Settings",
       "APP_CONFIG_MY_MUNBER": "My number",
       "APP_CONFIG_WALLPAPER": "Wallpapers",
       "APP_CONFIG_CASE": "Phone Case",
       "APP_CONFIG_ZOOM": "Zoom",
       "APP_CONFIG_VOLUME": "Volume",
       "APP_CONFIG_LANGUAGE": "Language",
-      "APP_CONFIG_RESET": "Reset Divice",
+      "APP_CONFIG_RESET": "Reset device",
       "APP_CONFIG_RESET_CONFIRM": "ERASE ALL DATA",
 
       "APP_PHONE_TITLE": "Phone",
@@ -265,8 +269,6 @@
       "APP_PHONE_DELETE_ALL": "Erase ALL.",
 
       "APP_BANK_TITLE": "Bank",
-
-      "APP_BOURSE_TITLE": "Stock Market",
 
       "APP_CONTACT_TITLE": "Contact",
       "APP_CONTACT_NEW": "New Contact",
@@ -290,7 +292,7 @@
       "APP_MESSAGE_CONTRACT_ENTER_NUMBER": "Enter a Number",
       "APP_MESSAGE_PLACEHOLDER_ENTER_MESSAGE": "Enter a message",
       
-      "APP_DARKTCHAT_TITLE": "Dark Tchat",
+      "APP_DARKTCHAT_TITLE": "Tor Chat",
       "APP_DARKTCHAT_NEW_CHANNEL": "Add channel",
       "APP_DARKTCHAT_DELETE_CHANNEL": "Delete channel",
       "APP_DARKTCHAT_CANCEL": "Cancel",

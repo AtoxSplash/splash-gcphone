@@ -13,7 +13,7 @@ files {
 	-- Coque
 	'html/static/img/coque/s8.png',
 	'html/static/img/coque/iphonex.png',
-	'html/static/img/coque/base.png',
+	'html/static/img/coque/oneplus5t.png',
 	'html/static/img/coque/transparent.png',
 	
 	-- Background
@@ -26,7 +26,6 @@ files {
 	'html/static/img/icons_app/sms.png',
 	'html/static/img/icons_app/settings.png',
 	'html/static/img/icons_app/menu.png',
-	'html/static/img/icons_app/bourse.png',
 	'html/static/img/icons_app/tchat.png',
 	'html/static/img/icons_app/photo.png',
 	'html/static/img/icons_app/bank.png',
@@ -34,9 +33,6 @@ files {
 	
 	'html/static/img/app_bank/logo_mazebank.jpg',
 
-	'html/static/img/app_tchat/splashtchat.png',
-
-	'html/static/img/courbure.png',
 	'html/static/fonts/fontawesome-webfont.ttf',
 
 	'html/static/sound/ring.ogg',
@@ -53,6 +49,7 @@ client_script {
 	"client/photo.lua",
 	"client/app_tchat.lua",
 	"client/bank.lua",
+	"client/twitter.lua",
 }
 
 server_script {
@@ -61,4 +58,5 @@ server_script {
 	"server/server.lua",
 
 	"server/app_tchat.lua",
+	"server/twitter.lua",
 }

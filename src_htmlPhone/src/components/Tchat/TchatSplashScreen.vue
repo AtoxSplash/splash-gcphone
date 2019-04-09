@@ -1,6 +1,6 @@
 <template>
   <div class="splash">
-    <img src="/html/static/img/app_tchat/splashtchat.png" alt="">
+    <img src="/html/static/img/icons_app/tchat.png" alt="">
   </div>
 </template>
 

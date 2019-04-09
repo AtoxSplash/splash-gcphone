@@ -8,9 +8,8 @@ const state = {
   coque: JSON.parse(window.localStorage['gc_coque'] || null),
   zoom: window.localStorage['gc_zoom'] || '100%',
   volume: parseFloat(window.localStorage['gc_volume']) || 1,
-  lang: window.localStorage['gc_language'] || 'fr_FR',
+  lang: window.localStorage['gc_language'] || 'en_US',
   config: {
-    reseau: 'Gannon',
     useFormatNumberFrance: false,
     apps: [],
     themeColor: '#2A56C6',
@@ -141,7 +140,7 @@ const actions = {
     dispatch('setVolume', 1)
     dispatch('setBackground', getters.config.background_default)
     dispatch('setCoque', getters.config.coque_default)
-    dispatch('setLanguage', 'fr_FR')
+    dispatch('setLanguage', 'en_US')
   }
 }
 
