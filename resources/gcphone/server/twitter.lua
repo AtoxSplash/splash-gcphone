@@ -1,3 +1,10 @@
+Citizen.CreateThread(function()
+    while ESX == nil do
+        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+        Citizen.Wait(0)
+    end
+end)
+
 function TwitterAddMessage (source, message)
 	local identifier = GetPlayerIdentifiers(source)[1]
 	local xPlayer = ESX.GetPlayerFromIdentifier(identifier)
