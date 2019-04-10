@@ -1,8 +1,8 @@
 GCPhone is a vue.js android styled phone for FiveM
 
 ## Notes
-- ESX is required
-- This is my own version of https://github.com/N3MTV/gcphone
+ESX is required  
+This is my own version of https://github.com/N3MTV/gcphone  
 
 ## Changes from gcphone
 + Improved design
@@ -47,16 +47,16 @@ start gcphone
 4. Drag both folders to the appropriate locations to match the resources folder
 5. Start both resources in your server.cfg
 
--- Building and developing
-Open a cmd inside the "src_htmlPhone" folder
-Run "npm i"
-You can build the project to the gcphone resource with "npm run build"
-While developing you should use "npm run dev"
+### Building and developing  
+Open a cmd inside the "src_htmlPhone" folder  
+Run "npm i"  
+You can build the project to the gcphone resource with "npm run build"  
+While developing you should use "npm run dev"  
 
 ## Ingame introduction
-Default keybind is Z
-You can navigate with the arrow buttons
-Enter to confirm and return to go back
+Default keybind is Z  
+You can navigate with the arrow buttons  
+Enter to confirm and return to go back  
 
 ## License
 [GNU v3](https://opensource.org/licenses/gpl-3.0.html)
