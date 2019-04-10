@@ -1,8 +1,8 @@
 This is my own version of https://github.com/N3MTV/gcphone
+GCPhone is a vue.js android styled phone, with built-in
 
 ## Notes
 + ESX is required
-+ Inventory does not work (currently in dev should work soon)
 
 ## Changes from gcphone
 + Improved design
@@ -15,9 +15,41 @@ This is my own version of https://github.com/N3MTV/gcphone
 + Removed bottom all apps menu
 
 ## Screenshots
-![](https://i.imgur.com/y0pgu7C.png)
-![](https://i.imgur.com/5wGwzLr.png)
-![](https://i.imgur.com/akSlMXW.png)
+<div>
+  <img src="https://i.imgur.com/y0pgu7C.png" height="500"/>
+  <img src="https://i.imgur.com/5wGwzLr.png" height="500"/>
+  <img src="https://i.imgur.com/roPMssO.png" height="500"/>
+  <img src="https://i.imgur.com/akSlMXW.png" height="500"/>
+  <img src="https://i.imgur.com/Eb2XT1h.png" height="500"/>
+</div>
+
+## Installation (Resource only)
+1. Download the newest version from https://github.com/AtoxSplash/splash-gcphone/releases
+2. Open the zip file a navigate to splash-gcphone-x.xx/
+3. Import all .sql files to your database
+4. Open resources folder and drag both gcphone and esx_addons_gcphone to your servers resource folder
+5. Add both resources to your server like so
+
+start esx_addons_gcphone
+start gcphone
+
+
+## Installation and building (For development)
+1. Download the newest version from https://github.com/AtoxSplash/splash-gcphone/releases
+2. Open the zip file a navigate to splash-gcphone-x.xx/
+3. Import all .sql files
+4. Drag both folders to the appropriate locations to match the resources folder
+
+-- Building and developing
+Open a cmd inside the "src_htmlPhone" folder
+Run "npm i"
+You can build the project to the gcphone resource with "npm run build"
+While developing you should use "npm run dev"
+
+## Ingame introduction
+Default keybind is Z
+You can navigate with the arrow buttons
+Enter to confirm and return to go back
 
 ## License
 [GNU v3](https://opensource.org/licenses/gpl-3.0.html)
