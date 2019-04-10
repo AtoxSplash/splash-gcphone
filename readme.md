@@ -1,5 +1,5 @@
 This is my own version of https://github.com/N3MTV/gcphone
-GCPhone is a vue.js android styled phone, with built-in
+GCPhone is a vue.js android styled phone for FiveM
 
 ## Notes
 + ESX is required
@@ -7,12 +7,18 @@ GCPhone is a vue.js android styled phone, with built-in
 ## Changes from gcphone
 + Improved design
 + Added Twitter
++ Added command /deletetweet (Identifier or Twitter handle)
 + Added Inventory
 + Changed icons to fit google style android apps
 + Iphone x phone case now features a notch and added a Oneplus 5T
 + Fixed some translations and set default language to english
 + Removed stock market
 + Removed bottom all apps menu
+
+## Upcoming features / updates
+- Mouse navigation instead of arrows keys etc
+- Adding weapons to inventory
+- Youtube, Vehicle app, ESX invoices app (Not sure yet)
 
 ## Screenshots
 <div>
@@ -39,6 +45,7 @@ start gcphone
 2. Open the zip file a navigate to splash-gcphone-x.xx/
 3. Import all .sql files
 4. Drag both folders to the appropriate locations to match the resources folder
+5. Start both resources in your server.cfg
 
 -- Building and developing
 Open a cmd inside the "src_htmlPhone" folder
