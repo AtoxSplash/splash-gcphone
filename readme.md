@@ -1,8 +1,8 @@
-This is my own version of https://github.com/N3MTV/gcphone
 GCPhone is a vue.js android styled phone for FiveM
 
 ## Notes
-+ ESX is required
+- ESX is required
+- This is my own version of https://github.com/N3MTV/gcphone
 
 ## Changes from gcphone
 + Improved design
